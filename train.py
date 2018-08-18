@@ -2,6 +2,8 @@ from Game import Environment
 from Agents import get_ddqn
 from arena import Arena
 
+import argparse
+
 
 def train(n_epoch):
     env = Environment()
@@ -57,4 +59,7 @@ def train(n_epoch):
 
 
 if __name__ == '__main__':
-    train(1000)
+    parser = argparse.ArgumentParser(description='Train model')
+    parser.add_argument('n_epoch', type=int, default=10000)
+    args = parser.parse_args()
+    train(args.n_epoch)
