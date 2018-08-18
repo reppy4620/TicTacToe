@@ -1,0 +1,35 @@
+<Gui>:
+    grid: Grid
+    orientation: 'vertical'
+
+    Label:
+        size_hint_y: 0.1
+        text: root.turn
+        font_size: 30
+    GridLayout:
+        size: root.size
+        id: Grid
+        cols: 3
+        rows: 3
+
+<YesNoPopUp>
+	orientation: 'vertical'
+
+	Label:
+		size_hint: 1, .9
+		font_size: 30
+		text: root.text
+
+	BoxLayout:
+		size_hint: 1, .1
+		orientation: 'horizontal'
+
+		Button:
+			size_hint: .5, 1
+			text: 'Yes'
+			on_release: root.yes()
+
+		Button:
+			size_hint: .5, 1
+			text: 'No'
+			on_release: root.no()
