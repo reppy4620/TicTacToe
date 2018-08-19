@@ -1,7 +1,6 @@
 from kivy.app import App
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.button import Button
-from kivy.uix.label import Label
 from kivy.properties import ObjectProperty, StringProperty
 from kivy.core.window import Window
 from kivy.config import Config
@@ -67,7 +66,7 @@ class Gui(BoxLayout):
         t = rd.choice([-1, 1])
         self.net = get_ddqn(self.env)
         self.net.load('models/agent2')
-        self.net.replay_buffer.load('models/replay2.npz')
+        # self.net.replay_buffer.load('models/replay2.npz')
         self.turn = 'Your Turn' if t == 1 else 'Enemy Turn'
         self.obs = self.env.reset(t)
         for i in range(3):
@@ -108,7 +107,7 @@ class Gui(BoxLayout):
             text = 'Enemy Missed'
         else:
             text = 'You Missed'
-        self.popup = Popup(title='Game End', content=YesNoPopUp(self, text))
+        self.popup = Popup(title='Game End', content=YesNoPopUp(self, text + '\nContinue ?'))
         self.popup.open()
 
     def conte(self):

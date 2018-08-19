@@ -19,6 +19,10 @@ class Board:
         self.field = np.zeros((3, 3), dtype=np.float32)
 
     @property
+    def valid(self):
+        return np.where(self.field == 0, 1, 0)
+
+    @property
     def positive(self):
         return np.where(self.field == 1, 1, 0)
 

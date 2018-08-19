@@ -17,9 +17,9 @@ class Environment:
     @property
     def state(self):
         if self.current_player == 1:
-            return np.array([self.board.positive, self.board.negative], dtype=np.float32)
+            return np.array([self.board.valid, self.board.positive, self.board.negative], dtype=np.float32)
         else:
-            return np.array([self.board.negative, self.board.positive], dtype=np.float32)
+            return np.array([self.board.valid, self.board.negative, self.board.positive], dtype=np.float32)
 
     def sample(self):
         return self.board.sample()

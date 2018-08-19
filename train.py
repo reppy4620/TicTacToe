@@ -6,10 +6,16 @@ import argparse
 
 
 def train(n_epoch):
+
     env = Environment()
     arena = Arena()
     print('Making Models...')
     agents = [None, get_ddqn(env), get_ddqn(env)]
+
+    agents[1].load('./models/agent1')
+    # agents[1].replay_buffer.load('./models/replay1.npz')
+    agents[2].load('./models/agent2')
+    # agents[2].replay_buffer.load('./models/replay2.npz')
 
     for e in range(n_epoch):
         print('-' * 30)
