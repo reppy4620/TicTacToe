@@ -4,7 +4,7 @@ TicTacToe
 Train DDQN and play with trained model
 
 # Demo
-![play-demo](https://github.com/reppy4620/TicTacToe/blob/master/images/play.png)
+![play-demo](https://github.com/reppy4620/TicTacToe/blob/master/images/demo.gif)
 
 # Requirement
 - Python 3.6.x
