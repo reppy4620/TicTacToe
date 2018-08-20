@@ -24,7 +24,7 @@ def train(n_epoch):
         for i in range(100):
             obs = env.reset(1)
             done = False
-            rewards = [0] * 4
+            rewards = [0] * 3
             value = 0
             last = None
             while not done:
